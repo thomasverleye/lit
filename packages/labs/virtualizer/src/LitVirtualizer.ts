@@ -97,7 +97,6 @@ export class LitVirtualizer extends LitElement {
       scroller: this.scroller,
     });
     this.addEventListener('rangeChanged', (e: RangeChangedEvent) => {
-      e.stopPropagation();
       this._first = e.first;
       this._last = e.last;
     });

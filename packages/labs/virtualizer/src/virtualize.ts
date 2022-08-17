@@ -135,7 +135,6 @@ class VirtualizeDirective<T> extends AsyncDirective {
       this.virtualizer = new Virtualizer({hostElement, layout, scroller});
       this.virtualizer!.connected();
       hostElement.addEventListener('rangeChanged', (e: RangeChangedEvent) => {
-        e.stopPropagation();
         this.first = e.first;
         this.last = e.last;
         this.setValue(this.render());

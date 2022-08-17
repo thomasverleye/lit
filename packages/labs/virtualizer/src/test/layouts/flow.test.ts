@@ -67,14 +67,14 @@ describe('flow layout', () => {
 
   describe('item resizing', () => {
     it('emits VisibilityChanged event due to item resizing', async () => {
-      const {container, virtualizer} = await createVirtualizer({
+      const {virtualizer} = await createVirtualizer({
         items: array(1000),
       });
       const visibilityChangedEvents: VisibilityChangedEvent[] = [];
 
       await until(() => getVisibleItems(virtualizer).length == 4);
 
-      container.addEventListener('visibilityChanged', (e) => {
+      virtualizer.addEventListener('visibilityChanged', (e) => {
         visibilityChangedEvents.push(e as VisibilityChangedEvent);
       });
 
